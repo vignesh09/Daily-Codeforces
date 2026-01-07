@@ -37,11 +37,26 @@ def solve():
     arr = list(map(int, input().split()))
     # logic here
 
-def main():
-    t = int(input())
-    for _ in range(t):
-        solve()
 
 @measure_time_memory
+def main():
+    n = int(input())
+    a = list(map(int, input().split()))
+    m = int(input())
+    q = list(map(int, input().split()))
+    dict_count = {}
+    sum = 1
+    index = 1
+    for num in a:
+        tmp_sum = sum+ num-1
+        while sum <= tmp_sum:
+            dict_count[sum] = index
+            sum += 1
+        index += 1
+    # print(dict_count)
+    for query in q:
+        print(dict_count[query])
+
+
 if __name__ == "__main__":
     main()
