@@ -37,11 +37,12 @@ def solve():
     arr = list(map(int, input().split()))
     # logic here
 
+@measure_time_memory
 def main():
     t = int(input())
     for _ in range(t):
         solve()
 
-@measure_time_memory
+
 if __name__ == "__main__":
     main()
